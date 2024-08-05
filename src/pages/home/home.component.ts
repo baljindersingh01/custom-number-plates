@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../component/header/header.component';
-import { PlatesCardComponent } from '../../component/plates-card/plates-card.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { FooterComponent } from '../../component/footer/footer.component';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    HeaderComponent,
-    FooterComponent,
-    MatGridListModule,
-    PlatesCardComponent,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    RouterModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  title: string = 'Welcome to custom plates store.';
-  description: string = ' Choose your number within 5 minutes only..';
-}
+export class HomeComponent {}

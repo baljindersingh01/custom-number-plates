@@ -1,0 +1,45 @@
+@import "../../styles.scss";
+#homepage {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    background: $PRIMARYCC;
+    color: $SECONDARYCC;
+    .branding-title {
+      .mat-icon {
+        color: $SECONDARYCC;
+      }
+    }
+    .logout-action {
+      .mat-icon {
+        color: $SECONDARYCC;
+      }
+    }
+  }
+  .body-content-container {
+    height: calc(100vh - 128px);
+    display: grid;
+    h2 {
+      align-self: center;
+      justify-self: center;
+      opacity: 0.4;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $PRIMARYCC;
+    .copyright {
+      span {
+        color: $SECONDARYCC;
+      }
+    }
+    .add-notepad {
+      .mat-icon {
+        color: $PRIMARYCC;
+        background: $SECONDARYCC;
+      }
+    }
+  }
+}
