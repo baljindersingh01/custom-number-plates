@@ -1,0 +1,33 @@
+@import "../../styles.scss";
+#login {
+  // leftSection
+  .left-wrapper {
+    background: $PRIMARYCC;
+    .welcome-tile-sec {
+      h1 {
+        color: $SECONDARYCC;
+      }
+      P {
+        color: $SECONDARYCC;
+        text-decoration: underline;
+      }
+    }
+  }
+  // rightSection
+  .right-wrapper {
+    .login-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+      .form-full-width {
+        width: 100%;
+      }
+      .login-button {
+        button {
+          background: $PRIMARYCC;
+          color: $WHITECC;
+        }
+      }
+    }
+  }
+}

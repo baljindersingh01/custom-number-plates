@@ -1,0 +1,26 @@
+<div id="login">
+    <mat-grid-list cols="2" rowHeight="100vh">
+        <mat-grid-tile class="left-wrapper">
+            <div class="welcome-tile-sec">
+                <h1>Welcome to my notepad: a sanctuary for your thoughts.</h1>
+                <p>Feel free to adjust the wording to better fit your style or needs!</p>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="right-wrapper">
+            <form class="login-form">
+                <h1>Please enter your login details...</h1>
+                <mat-form-field class="form-full-width">
+                    <mat-label>Email:</mat-label>
+                    <input matInput #userEmail>
+                </mat-form-field>
+                <mat-form-field class="form-full-width">
+                    <mat-label>Password:</mat-label>
+                    <input matInput #userPassoword>
+                </mat-form-field>
+                <div class="login-button">
+                    <button mat-flat-button (click)="login(userEmail.value, userPassoword.value)">Login</button>
+                </div>
+            </form>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
