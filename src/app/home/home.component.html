@@ -1,0 +1,35 @@
+<section id="homepage">
+    <mat-toolbar class="header">
+        <div class="branding-title">
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>home</mat-icon>
+            </button>
+            <span>My Notepad</span>
+        </div>
+        <div class="logout-action">
+            <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu">
+                <mat-icon>logout</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="''">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+    <div class="body-content-container">
+      <h2>No Records Found🐼...</h2>
+  </div>
+  <mat-toolbar class="footer">
+      <div class="copyright">
+          <span>Baljinder Singh. All rights reserved 2024.</span>
+      </div>
+      <div class="add-notepad">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+              <mat-icon>add</mat-icon>
+          </button>
+      </div>
+  </mat-toolbar>
+  </section>
