@@ -22,7 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class LoginComponent {
   constructor(private router: Router) {}
   login(username: string, password: string) {
-    if (username == 'baljinder.s@samsung.com' && password == '10001') {
+    if (username == 'admin' && password == 'admin') {
       this.router.navigate(['/home']);
     } else {
       alert('You Have Entered Wrong Details...');
