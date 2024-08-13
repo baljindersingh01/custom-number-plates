@@ -17,8 +17,19 @@
     }
   }
   .body-content-container {
-    height: calc(100vh - 128px);
     display: grid;
+    gap: 16px;
+    padding: 36px;
+    height: calc(100vh - 128px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .card-content-container{
+      max-width: 400px;
+      min-height: 140px;
+      height: max-content;
+      .card-footer {
+        padding: 16px;
+      }
+    }
     h2 {
       align-self: center;
       justify-self: center;
