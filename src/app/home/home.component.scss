@@ -20,7 +20,6 @@
     display: grid;
     gap: 16px;
     padding: 36px;
-    height: calc(100vh - 128px);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     .card-content-container{
       max-width: 400px;
