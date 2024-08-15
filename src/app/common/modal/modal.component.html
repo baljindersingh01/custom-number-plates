@@ -1,10 +1,38 @@
-<h2 mat-dialog-title>Delete file</h2>
-<mat-dialog-content>
-  Would you like to delete cat.jpeg?
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
-
-    
+<section id="modalContainer">
+  <h2 mat-dialog-title>Add Your Note</h2>
+  <mat-dialog-content class="modal-body-container">
+    <p>Please enter your note as per your choice.</p>
+    <mat-form-field class="modal-form-field">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" [(ngModel)]="modalTitle" />
+      @if (modalTitle) {
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="modalTitle = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      }
+    </mat-form-field>
+    <mat-form-field class="modal-form-field">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" [(ngModel)]="modalDescription" />
+      @if (modalDescription) {
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="modalDescription = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      }
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions class="modal-footer-container">
+    <button mat-flat-button mat-dialog-close>No</button>
+    <button mat-flat-button mat-dialog-close cdkFocusInitial>ADD</button>
+  </mat-dialog-actions>
+</section>

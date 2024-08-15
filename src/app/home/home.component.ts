@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.open(ModalComponent, {
-      width: '250px',
+      width: '442px',
     });
   }
 }
