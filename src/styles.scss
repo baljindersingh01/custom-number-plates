@@ -49,3 +49,25 @@ $SECONDARYCC: #e0e3e2;
 $WHITECC: #ffffff;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+/* Common Modal Styling */
+#modalContainer {
+  .modal-body-container {
+    .modal-form-field {
+      width: 400px;
+      button {
+        margin-right: 8px;
+      }
+    }
+  }
+  .modal-footer-container{
+    padding: 0 20px 20px 20px;
+    .mdc-button{
+      background-color: $PRIMARYCC;
+      color: $SECONDARYCC;
+    }
+  }
+}
