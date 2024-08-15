@@ -10,6 +10,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../common/modal/modal.component';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -23,7 +25,7 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatChipsModule,
     MatProgressBarModule,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -31,12 +33,25 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent implements OnInit {
   quotes: any[] = [];
 
-  constructor(private todayApiService: TodayApiService) {}
+  constructor(
+    private todayApiService: TodayApiService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.todayApiService.getQuotes().subscribe((data) => {
       this.quotes = data;
-      console.log(this.quotes);
+    });
+  }
+
+  openDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(ModalComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
     });
   }
 }

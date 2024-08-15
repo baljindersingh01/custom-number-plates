@@ -30,19 +30,23 @@
   </mat-toolbar>
   <div class="body-content-container">
     <!-- <h2>{{ quotes[0].name }} No Records Found🐼...</h2> -->
-    <mat-card *ngFor="let quote of quotes" class="card-content-container" appearance="outlined">
-        <mat-card-header>
-          <mat-card-title>{{ quote.name }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ quote.description }}</p>
-        </mat-card-content>
-        <mat-card-footer class="card-footer">
-          <mat-chip-set [attr.aria-label]="quote.name + ' traits'">
-            <mat-chip *ngFor="let trait of quote.traits">{{ trait }}</mat-chip>
-          </mat-chip-set>
-        </mat-card-footer>
-      </mat-card>      
+    <mat-card
+      *ngFor="let quote of quotes"
+      class="card-content-container"
+      appearance="outlined"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ quote.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ quote.description }}</p>
+      </mat-card-content>
+      <mat-card-footer class="card-footer">
+        <mat-chip-set [attr.aria-label]="quote.name + ' traits'">
+          <mat-chip *ngFor="let trait of quote.traits">{{ trait }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-footer>
+    </mat-card>
   </div>
   <mat-toolbar class="footer">
     <div class="copyright">
@@ -52,6 +56,7 @@
       <button
         mat-icon-button
         class="example-icon"
+        (click)="openDialog('0ms', '0ms')"
         aria-label="Example icon-button with share icon"
       >
         <mat-icon>add</mat-icon>
