@@ -44,14 +44,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  openDialog(
-    enterAnimationDuration: string,
-    exitAnimationDuration: string
-  ): void {
+  openDialog(): void {
     this.dialog.open(ModalComponent, {
       width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
     });
   }
 }
