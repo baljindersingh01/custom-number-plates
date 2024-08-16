@@ -31,7 +31,7 @@
   <div class="body-content-container">
     <!-- <h2>{{ quotes[0].name }} No Records Found🐼...</h2> -->
     <mat-card
-      *ngFor="let quote of quotes"
+      *ngFor="let quote of jsonData"
       class="card-content-container"
       appearance="outlined"
     >
@@ -40,6 +40,8 @@
       </mat-card-header>
       <mat-card-content>
         <p>{{ quote.description }}</p>
+        <button mat-flat-button mat-dialog-close>Edit</button>
+        <button mat-flat-button mat-dialog-close cdkFocusInitial>Delete</button>
       </mat-card-content>
       <mat-card-footer class="card-footer">
         <mat-chip-set [attr.aria-label]="quote.name + ' traits'">

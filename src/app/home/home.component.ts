@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodayApiService } from '../services/today-api.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,7 +11,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../common/modal/modal.component';
-@Component({
+
+@Component({  
   selector: 'app-home',
   standalone: true,
   imports: [
@@ -31,17 +31,18 @@ import { ModalComponent } from '../common/modal/modal.component';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  quotes: any[] = [];
-
-  constructor(
-    private todayApiService: TodayApiService,
-    public dialog: MatDialog
-  ) {}
+  jsonData: any[] = [];
+  constructor(private http: HttpClient,public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.todayApiService.getQuotes().subscribe((data) => {
-      this.quotes = data;
-    });
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.http.get<any[]>('assets/data.json')
+      .subscribe(data => {
+        this.jsonData = data;
+      });
   }
 
   openDialog(): void {
