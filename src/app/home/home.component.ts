@@ -50,4 +50,10 @@ export class HomeComponent implements OnInit {
       width: '442px',
     });
   }
+
+  deleteData(el:any):void{
+    const childElement = el;
+    const parentElement = childElement.parentElement;
+    el.jsonData[0].de();
+  }
 }

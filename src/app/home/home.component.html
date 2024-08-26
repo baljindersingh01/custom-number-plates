@@ -21,10 +21,8 @@
         <mat-icon>logout</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item [routerLink]="''">
-          <mat-icon>logout</mat-icon>
-          <span>Logout</span>
-        </button>
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
       </mat-menu>
     </div>
   </mat-toolbar>
@@ -41,7 +39,7 @@
       <mat-card-content>
         <p>{{ quote.description }}</p>
         <button mat-flat-button mat-dialog-close>Edit</button>
-        <button mat-flat-button mat-dialog-close cdkFocusInitial>Delete</button>
+        <button mat-flat-button mat-dialog-close cdkFocusInitial (click)="deleteData(this)">Delete</button>
       </mat-card-content>
       <mat-card-footer class="card-footer">
         <mat-chip-set [attr.aria-label]="quote.name + ' traits'">
