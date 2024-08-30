@@ -21,10 +21,18 @@
     gap: 16px;
     padding: 36px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: calc(100vh - 200px);
     .card-content-container{
       max-width: 400px;
       min-height: 140px;
       height: max-content;
+      .mdc-button{
+        background-color: $PRIMARYCC;
+        color: $SECONDARYCC;
+        &:last-child{
+          margin-left: 12px;
+        }
+      }
       .card-footer {
         padding: 16px;
       }
